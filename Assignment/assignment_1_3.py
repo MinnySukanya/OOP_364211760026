@@ -26,3 +26,5 @@ def getFortune(var):
 PID = getPTD()
 print(f'The data from user: {sum(PID)}')
 print(f'The prediction result is: {getFortune(sum(PID))}')
+
+print("Hello, MIT221")
