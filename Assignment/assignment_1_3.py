@@ -11,6 +11,7 @@ Group: {MIT221}
 • ถ้าเป็นเลขคี่ ให้ทำนายว่า your fortune is very good
 
 ใช้ฟังก์ชั่น split()
+ใช้ฟังก์ชั่น spl
 """
 def getPTD():
     pid = input('Enter your pid ') #str
