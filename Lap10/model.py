@@ -1,7 +1,7 @@
 """
-Name : {}
-ID: {}
-Group: {}
+Name: Sukanya Khunthana
+TD: SID: {364211760026}
+Group: {MIT221}
 """
 class Person:
     def __init__(self,name,age,weight,height):
