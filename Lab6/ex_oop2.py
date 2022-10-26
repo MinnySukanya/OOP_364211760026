@@ -1,6 +1,6 @@
 """
-Name: {นางสาวสุกัญญา ขุนทนะ}
-SID: {364211760026}
+Name: Sukanya Khunthana
+TD: SID: {364211760026}
 Group: {MIT221}
 """
 
