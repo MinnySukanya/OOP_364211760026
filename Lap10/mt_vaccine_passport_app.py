@@ -4,78 +4,39 @@ TD: SID: {364211760026}
 Group: {MIT221}
 """
 
-from model import Student,Vaccine,VaccinatedPassport,Employee
+from model import Person,Student,Vaccine,Vaccine_Passport
 
-def display_vaccine():
-    n = 1
-    for x in Vaccine.all_vaccine:
-        print(f'\t{n}. {x} ')
-        n += 1
+p1 = Person("Puriwat",36,80.0,180)
 
-def validate_age(a):
-    if a >= 18:
-        return True
-    else:
-        return False
+v1 = Vaccine("Astrazeneca")
+d1 = "10/7/2565"
 
-def input_person():
-    name = input('Name: ')
+vp1 = Vaccine_Passport(p1)
 
-    while True:
-        age = int(input('Age: '))
-        if validate_age(age):
-            break
-        else:
-            print('Age should be higher than 18 year old.')
+vp1.vaccine_passport_info()
 
-    weight = float(input('Weight (kg): '))
-    height = float(input('Height (cm): '))
+vp1.add_vaccine(v1)
+vp1.add_date(d1)
 
-    return name,age,weight,height
+vp1.vaccine_passport_info()
 
-def input_student():
-    id = input('Student ID: ')
-    major = input('Major: ')
-    return id,major
+v2 = Vaccine("Pfizer")
+d2 = "10/8/2565"
 
-def input_employee():
-    position = input('Position: ')
-    return position
+vp1.add_vaccine(v2)
+vp1.add_date(d2)
 
-def input_vaccine():
-    num = int(input('How many your vaccinated ? : '))
+vp1.vaccine_passport_info()
 
-    vaccinate_date = list()
+# Student
+s1 = Student("Phornprasert",38,75,165,"MIT")
 
-    for x in range(num):
-        display_vaccine()
-        n = len(Vaccine.all_vaccine)
-        while True:
-            select = int(input(f'select(1-{n}): '))
-            if select >= 1 and select <= n:
-                break
-            print(f'Please, enter number 1-{n} only.')
+v3 = Vaccine("Sinovac")
+d3 = "11/8/2565"
 
-        d = input('Date: ')
+vp2 = Vaccine_Passport(s1)
 
-        vaccinate_date.append([Vaccine(Vaccine.all_vaccine[select - 1]), d])
+vp2.add_vaccine(v3)
+vp2.add_date(d3)
 
-    return vaccinate_date
-
-
-if __name__ == '__main__':
-    print('Enter your information: ')
-    p = input_person()
-
-    x = input('Are you Student(s) or Employee(e) :: (s/e): ?')
-    if x.lower() == 's':
-        s = input_student()
-        s = Student(p[0], p[1], p[2], p[3], s[0], s[1])
-    else:
-        position = input_employee()
-        s = Employee(p[0], p[1], p[2], p[3],position)
-
-    v_s = VaccinatedPassport(s)
-    v_s.add_vaccinated(input_vaccine())
-
-    v_s.__str__()
+vp2.vaccine_passport_info()
