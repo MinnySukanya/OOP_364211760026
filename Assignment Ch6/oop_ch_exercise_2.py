@@ -1,5 +1,5 @@
 """
-Name: Sukanya Khuthana
+Name: สุกัญญา ขุนทนะ
 TD: SID: {364211760026}
 Group: {MIT221}
 """
